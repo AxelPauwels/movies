@@ -197,7 +197,7 @@ class Documentary extends CI_Controller
 
 	public function sendMailByCodeIgniter($from, $to, $subject, $message)
 	{
-		$this->email->from($from, 'Movieserver');
+		$this->email->from($from, 'Movies');
 		$this->email->to($to);
 		$this->email->subject($subject);
 		$this->email->message($message);

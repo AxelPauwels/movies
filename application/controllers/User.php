@@ -31,7 +31,7 @@ class User extends CI_Controller
     private function sendmail($to, $id, $password = '')
     {
         $this->email->set_mailtype('html');
-        $this->email->from('info.movieserver@gmail.com', 'Info MovieServer');
+        $this->email->from('info.movieserver@gmail.com', 'Info Movies');
         $this->email->to($to);
 
         if ($password == '') {

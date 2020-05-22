@@ -1,6 +1,6 @@
 <div id="home" class="home">
     <div class="text-vcenter">
-        <h1>Movieserver App</h1>
+        <h1>Movies App</h1>
         <h4>De filmcollectie op zak ...</h4>
     </div>
 </div>
