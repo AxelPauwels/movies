@@ -1,0 +1,1561 @@
+:root {
+    --colorDefault: #f9f9f9;
+    --colorPrimary: #428bca;
+    --colorInfo: #5bc0de;
+    --colorSuccess: #5cb85c;
+    --colorWarning: #ED9F35;
+    --colorDanger: #d9534f;
+    --colorPrimaryLighter: #609dd2;
+
+    --colorGrayLighter: #CCC;
+    --colorGrayLight: #999;
+    --colorGrayDarker: #333;
+    --colorNav: #222;
+    --colorDowloadGreen: #4AAF46;
+    --colorDowloadOrange: #ED9F35;
+
+    --colorPrimaryDarker: #214765;
+    --colorDangerDarker: #6C2928;
+    --colorWarningDarker: #76501A;
+
+    --baseUrl: "";
+    --siteUrl: url("https://movies.sepagon.be");
+    --backgroundImageUrl: url("../images/background6optimized.jpg");
+}
+
+body {
+    background: var(--backgroundImageUrl);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+@media screen and (max-width: 767px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+}
+
+/*hide scrollbar but keep functionality*/
+::-webkit-scrollbar {
+    display: none !important;
+}
+
+.customTextBlue {
+    color: var(--colorPrimary);
+    text-shadow: 0.5px 0.5px black;
+}
+
+.customTextGray {
+    color: var(--colorGrayLight);
+    text-shadow: 0.5px 0.5px black;
+}
+
+.customTextGreen {
+    font-size: 12px;
+    color: var(--colorDowloadGreen);
+    text-shadow: 0.5px 0.5px black;
+}
+
+.customTextOrange {
+    font-size: 12px;
+    color: var(--colorDowloadOrange);
+    text-shadow: 0.5px 0.5px black;
+}
+
+.btn.size {
+    width: 200px;
+}
+
+.btn.sizeSmall {
+    width: 110px;
+}
+
+.btn.lightBlue {
+    color: white;
+    background-color: var(--colorPrimaryLighter) !important;
+    border: var(--colorPrimary) !important;
+}
+
+.btn.lightBlue:hover {
+    background-color: var(--colorPrimary) !important;
+    filter: brightness(90%);
+}
+
+.downloadActief {
+    color: var(--colorDowloadGreen);
+}
+
+.downloadInactief {
+    color: var(--colorDowloadOrange);
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}
+
+.textShadowSmall {
+    text-shadow: 0.5px 0.5px black;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: lightgray;
+}
+
+.mySVG {
+    -webkit-transform: scale(0.65);
+    -moz-transform: scale(0.65);
+    -ms-transform: scale(0.65);
+    -o-transform: scale(0.65);
+    transform: scale(0.65);
+}
+
+.form-group {
+    margin-bottom: 1px !important;
+}
+
+/*panel voor search-box*/
+.panel-heading span.textShadowSmall {
+    color: var(--colorPrimary) !important;
+}
+
+/*MODALS----------------------------------------------------------------------*/
+div.modal-content.movies {
+    background-color: var(--colorNav) !important; /* Fallback color */
+    /*background-color: rgba(25,25,25,0.9) !important; !* Black w/ opacity *!*/
+
+    border: 1px solid dimgray;
+    /*background: url('http://movieserver.hopto.org/movieserver/assets/images/background6b.jpg');*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center;*/
+    /*!*background-attachment: fixed;*!*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*-o-background-size: cover;*/
+    /*background-size: cover;*/
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1) !important;
+}
+
+/*apart gezet omdat indien je met background-images werkt, een andere image moet getoond worden (een vertical image)*/
+div.modal-content.episodes {
+    background-color: var(--colorNav) !important; /* Fallback color */
+    /*background-color: rgba(25,25,25,0.9) !important; !* Black w/ opacity *!*/
+    border: 1px solid dimgray;
+    /*background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('http://movieserver.hopto.org/movieserver/assets/images/background3.jpg');*/
+    /*background: url('http://movieserver.hopto.org/movieserver/assets/images/background3.jpg');*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center;*/
+    /*!*background-attachment: fixed;*!*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*-o-background-size: cover;*/
+    /*background-size: cover;*/
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1) !important;
+}
+
+
+div.modal-content h3 {
+    color: var(--colorGrayLight);
+    text-shadow: 0.5px 0.5px black;
+    margin-top: 0 !important;
+}
+
+div.modal-content h4 {
+	color: var(--colorGrayLight);
+	text-shadow: 0.5px 0.5px black;
+	margin-top: 0 !important;
+}
+
+div.modal-content span.customTextGreen {
+    margin-top: -5px;
+}
+
+div.modal-content i {
+    padding: 0px !important;
+}
+
+div.modal-content hr {
+    border-color: black;
+}
+
+div.modal-header {
+    padding-bottom: 0;
+}
+
+div.modal-header button.close {
+    outline: none !important;
+}
+
+div.modal-header button.close span {
+    font-size: 30px;
+}
+
+div.modal-body {
+    padding-top: 0;
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
+/*vertical center modal*/
+.modal-dialog {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .modal-dialog {
+        min-height: calc(100vh - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-dialog table.table.noHoverAllowed tr:nth-of-type(2) td:nth-of-type(1),
+    .modal-dialog table.table.noHoverAllowed tr:nth-of-type(2) td:nth-of-type(2),
+    .modal-dialog table.table.noHoverAllowed tr:nth-of-type(3) td:nth-of-type(1),
+    .modal-dialog table.table.noHoverAllowed tr:nth-of-type(3) td:nth-of-type(2) {
+        display: none;
+    }
+}
+
+
+/*NAVBAR - home and user icons------------------------------------------------*/
+.fa-home {
+    color: var(--colorPrimary);
+}
+
+.fa-home:hover {
+    color: white;
+}
+
+.fa-user-circle-o {
+    color: var(--colorPrimary);
+}
+
+.devicon-devicon-plain i {
+    color: gray !important;
+}
+
+.dropdownAddon {
+    margin-left: -3px;
+}
+
+.dropdownAddonBtn {
+    background-color: #EAEAEA;
+    width: 48px;
+}
+
+.dropdownAddonBtn:hover {
+    background-color: #EAEAEA;
+    border-color: #C1C1C1;
+    cursor: default;
+}
+
+.navbarDropdown ul {
+    list-style: none !important;
+    padding-left: 10px;
+}
+
+a.dropdown-item {
+    color: black !important;
+    font-size: 14px !important;
+}
+
+/*panel*/
+
+div.panel {
+    border-radius: 0px;
+    border: none !important;
+}
+
+div.panel-primary {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+div.panel-heading {
+    color: var(--colorGrayLight) !important;
+    background-color: var(--colorNav) !important;
+    border: 1px solid var(--colorPrimary) !important;
+    height: 40px;
+    margin-top: -20px;
+    border-radius: 0 0 5px 5px;
+}
+
+div.panel-body {
+    padding-left: 1px;
+    padding-right: 1px;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 555px) {
+    div.panel-body {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    div.panel-body {
+        margin: auto;
+    }
+}
+
+/*input field transparent*/
+input.customInput {
+    color: var(--colorGrayLight);
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid transparent !important;
+    border-radius: 0px !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+input.customInput.grayline {
+    border-bottom: 1px solid var(--colorGrayLight) !important;
+}
+
+input.customInput.graylineCenter {
+    text-align: center;
+    border-bottom: 1px solid var(--colorGrayLight) !important;
+}
+
+input.customInput:hover,
+input.customInput:focus,
+input.customInput:active {
+    color: var(--colorPrimary) !important;
+    border-radius: 0px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid var(--colorPrimary) !important;
+}
+
+input.customInput:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 35px var(--colorNav) inset;
+    -webkit-text-fill-color: var(--colorPrimary) !important;
+    border-bottom: 1px solid var(--colorNav) !important;
+}
+
+.customInputGroup span.input-group-addon {
+    background-color: transparent !important;
+    border: none !important;
+    padding-bottom: 1px !important;
+}
+
+.customInputGroup .input-group-addon i {
+    background-color: transparent !important;
+    color: var(--colorGrayLight);
+}
+
+/*input submit (button)*/
+input.customInputSubmit,
+button.customInputSubmit {
+    font-size: 18px;
+    color: var(--colorGrayLight) !important;
+    background-color: transparent !important;
+    border: 1px solid var(--colorPrimary) !important;
+    border-radius: 0px !important;
+    opacity: 0.8 !important;
+    text-shadow: 0.5px 0.5px black !important;
+    outline: none !important;
+    box-shadow: none !important;
+    width: auto;
+}
+
+#advancedSearch input.customInputSubmit,
+#advancedSearch button.customInputSubmit {
+    border: none !important;
+    text-align: left;
+    color: var(--colorPrimaryLighter) !important;
+}
+
+input.customInputSubmit:hover,
+input.customInputSubmit:focus,
+input.customInputSubmit:active,
+button.customInputSubmit:hover,
+button.customInputSubmit:focus,
+button.customInputSubmit:active {
+    color: var(--colorPrimary) !important;
+}
+
+/*button transparant*/
+button.customButton {
+    color: var(--colorGrayLight);
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid transparent !important;
+    /*border-radius: 0px !important;*/
+    box-shadow: none !important;
+    text-shadow: 1px 1px 1px black;
+}
+
+button.customButton:hover {
+    color: var(--colorPrimary) !important;
+    border-radius: 0px !important;
+    border-bottom: 1px solid var(--colorPrimary) !important;
+}
+
+button.customButton:focus,
+button.customButton:active {
+    color: var(--colorPrimary) !important;
+    border-radius: 0px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid var(--colorPrimary) !important;
+}
+
+/*zoek op jaar + zoek op titel*/
+.customInput#jaar,
+.customInput#naam {
+    max-width: 105px;
+}
+
+/*dropdown transparent*/
+select.customDropdown {
+    -webkit-appearance: none;
+    color: var(--colorGrayLight) !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    border-bottom-right-radius: 0px !important;
+    border: none !important;
+    border-bottom: 1px solid transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+select.customDropdown:focus,
+select.customDropdown:hover,
+select.customDropdown:active {
+    color: var(--colorPrimary) !important;
+    border-bottom: 1px solid var(--colorPrimary) !important;
+
+}
+
+/*Search functions------------------------------------------------------------*/
+.switchBasicSearch {
+    float: right;
+    margin: 4px;
+    color: var(--colorPrimary);
+}
+
+.switchAdvancedSearch {
+    float: right;
+    margin: 4px;
+    color: var(--colorGrayLight);
+    cursor: pointer;
+    /*text-shadow: 0.5px 0.5px black;*/
+}
+
+.switchCover {
+    float: left;
+    margin: 4px;
+    color: var(--colorPrimary);
+}
+
+.switchList {
+    float: left;
+    margin: 4px;
+    color: var(--colorGrayLight);
+    cursor: pointer;
+    /*text-shadow: 0.5px 0.5px black;*/
+}
+
+/*moviesList.php - episodesList.php-------------------------------------------*/
+.viewList td:first-child {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.viewList td:last-child {
+    padding-right: 15px;
+}
+
+.viewList > table > thead > tr th {
+    text-align: center !important;
+    border: none !important;
+}
+
+.viewList > table thead > tr th:first-child {
+    text-align: left !important;
+    padding-left: 20px !important;
+}
+
+.fa-sort {
+    cursor: pointer;
+    color: var(--colorPrimary);
+}
+
+div.viewList .table i.fa-info-circle {
+    color: var(--colorGrayLight);
+}
+
+/* i:hover is gedaan met jQuery*/
+
+div.viewList .table > tbody > tr > td,
+div.viewList .table > tbody > tr > th {
+    color: var(--colorGrayLight);
+    text-shadow: 0.5px 0.5px black;
+    border: none;
+    background-color: rgba(25, 25, 25, 0.3); /*default is grijs*/
+}
+
+div.viewList .table:not(.noHoverAllowed) > tbody > tr:hover td {
+    color: var(--colorPrimary);
+    text-shadow: 0.5px 0.5px black;
+}
+
+div.viewList .table > tbody > tr:nth-child(2n+0) > td,
+div.viewList .table > tbody > tr:nth-child(2n+0) > th {
+    background-color: rgba(25, 25, 25, 0); /*default is wit (transparent)*/
+}
+
+#downloadAll {
+    cursor: pointer;
+}
+
+/*ajax_moviesInfo.php - ajax_episodesInfo.php---------------------------------*/
+.infoModal table td:last-child {
+    /*text-align: left !important;*/
+    /*margin-right: 20% !important;*/
+}
+
+.infoModal #episodesTable > tbody > tr > td:nth-child(1) {
+    text-align: left !important;
+	width: 15px;
+}
+
+.infoModal #episodesTable > tbody > tr > td:nth-child(2) {
+    text-align: left !important;
+}
+
+.infoModal #episodesTable > thead > tr > th:nth-child(3),
+.infoModal #episodesTable > thead > tr > th:nth-child(4) {
+	padding-left: 25px !important;
+	color:red !important;
+	width: 80px;
+}
+
+.infoModal .extra-info{
+	text-transform: uppercase;
+	padding-top: 40px;
+}
+
+.infoModal .extra-info__list{
+	width: 33%;
+	float: left;
+	text-align: left;
+	list-style-type: none;
+	padding: 25px 15px;
+}
+
+.infoModal .extra-info__title{
+	color:var(--colorGrayLighter)
+}
+
+.infoModal .extra-info__item{
+	color:var(--colorGrayLight)
+}
+
+
+/* --- DROPDOWN LIST SEARCH------------------*/
+.panelPadding {
+    padding-top: 13px;
+}
+
+.profileMail {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#profile p.customTextBlue,
+#profile p#deleteMyAccount {
+    text-align: center;
+    margin-left: 40px !important;
+}
+
+/*Covers----------------------------------------------------------------------*/
+div.covers {
+    position: relative;
+    margin: 2px;
+    float: left;
+    display: inline-block;
+    overflow: hidden;
+}
+
+div.covers > a img {
+    opacity: 0.85;
+    border: 1px solid black;
+    width: 175px;
+    height: 250px;
+
+    webkit-transform: scale(1); /* Safari and Chrome */
+    -moz-transform: scale(1); /* Firefox */
+    -ms-transform: scale(1); /* IE 9 */
+    -o-transform: scale(1); /* Opera */
+    transform: scale(1);
+
+    -webkit-transition: transform 1.5s ease-in-out;
+    -moz-transition: transform 1.5s ease-in-out;
+    -ms-transition: transform 1.5s ease-in-out;
+    -o-transition: transform 1.5s ease-in-out;
+    transition: transform 1.5s ease-in-out;
+}
+
+div.covers:hover > a img {
+    opacity: 1;
+    border: 1px solid transparent;
+    /*box-shadow: inset 3px blue;*/
+
+    webkit-transform: scale(1.1); /* Safari and Chrome */
+    -moz-transform: scale(1.1); /* Firefox */
+    -ms-transform: scale(1.1); /* IE 9 */
+    -o-transform: scale(1.1); /* Opera */
+    transform: scale(1.1);
+
+    -webkit-transition: transform 0.3s ease-in-out, border 0.5s, opacity 0.5s;
+    -moz-transition: transform 0.3s ease-in-out, border 0.5s, opacity 0.5s;
+    -ms-transition: transform 0.3s ease-in-out, border 0.5s, opacity 0.5s;
+    -o-transition: transform 0.3s ease-in-out, border 0.5s, opacity 0.5s;
+    transition: transform 0.3s ease-in-out, border 0.5s, opacity 0.5s;
+}
+
+div.additional-layer {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 40px;
+    width: 100%;
+    top: 100%;
+    right: 0;
+    background: none;
+
+    -webkit-transition: top 1.5s linear, background 0.5s linear;
+    -moz-transition: top 1.5s linear, background 0.5s linear;
+    -ms-transition: top 1.5s linear, background 0.5s linear;
+    -o-transition: top 1.5s linear, background 0.5s linear;
+    transition: top 1.5s linear, background 0.5s linear;
+}
+
+div.covers:hover div.additional-layer {
+    top: calc(100% - 40px);
+    background: rgba(0, 0, 0, 0.9);
+
+    -webkit-transition: top 0.3s ease-in-out, background 0.01s linear;
+    -moz-transition: top 0.3s ease-in-out, background 0.01s linear;
+    -ms-transition: top 0.3s ease-in-out, background 0.01s linear;
+    -o-transition: top 0.3s ease-in-out, background 0.01s linear;
+    transition: top 0.3s ease-in-out, background 0.01s linear;
+}
+
+div.additional-layer > div {
+    flex: 1;
+}
+
+div.additional-layer > div.more-info {
+    padding-top: 8px;
+}
+
+div.additional-layer > div.more-info i {
+    color: #BBBBBB;
+    padding: 0 !important;
+}
+
+div.additional-layer > div.more-info i:hover {
+    color: #337ab7;
+}
+
+div.additional-layer > div.download-link {
+    padding-top: 10px;
+}
+
+div.additional-layer > div.download-link i {
+    color: #BBBBBB;
+    padding: 0 !important;
+}
+
+div.additional-layer > div.download-link i.downloadActief:hover {
+    color: var(--colorDowloadGreen);
+}
+
+div.additional-layer > div.download-link i.downloadInactief:hover {
+    color: var(--colorWarning);
+}
+
+div.additional-layer > div.imdb-link {
+    padding-top: 10px;
+}
+
+div.additional-layer > div.imdb-link img {
+    padding: 0 6px;
+    height: 24px;
+    width: 52px;
+    border-radius: 4px !important;
+    border: none !important;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+div.additional-layer > div.imdb-link img:hover {
+    padding: 0 6px;
+    height: 24px;
+    width: 52px;
+    border-radius: 4px !important;
+    border: none !important;
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
+
+/*main_master.php-------------------------------------------------------------*/
+#ontwikkeling {
+    background-color: transparent;
+    color: #ffffff;
+    padding-top: 5% !important;
+    text-shadow: 0.5px 0.5px black;
+}
+
+svg.banner {
+    width: 100px;
+    height: auto;
+}
+
+svg {
+    filter: drop-shadow(-0.75px -0.75px 1px black);
+}
+
+#ontwikkeling h4 {
+    margin-top: 1px;
+    color: var(--colorPrimary);
+}
+
+.ontwikkelIcoon h4 {
+    color: white !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    text-shadow: 0.5px 0.5px black;
+}
+
+img.materialize {
+    height: auto;
+    width: 100%;
+    text-align: center;
+    padding-top: 6%;
+    padding-bottom: 7%;
+}
+
+img.apache {
+    height: auto;
+    width: 100%;
+    padding-top: 38%;
+    padding-bottom: 38%;
+}
+
+/*home_login.php--------------------------------------------------------------*/
+div.col-lg-12.hero-feature,
+div.col-lg-12.hero-feature > div.thumbnail {
+    background-color: transparent !important;
+    border: none;
+}
+
+#loginPage {
+    margin-top: calc(50vh - (440px / 2)); /* 440px is height of the entire row*/
+}
+
+#loginPage > form {
+    width: 75%;
+    margin: auto;
+}
+
+/*MOBILE ~375px*/
+@media screen and (max-width: 375px) {
+    #loginPage > form {
+        width: 100%;
+        margin: auto 0;
+    }
+
+    #loginPage .input-group.customInputGroup {
+        width: 100%;
+    }
+
+    #loginPage .input-group.customInputGroup > .input-group-addon {
+        display: none;
+    }
+
+    .help-block.with-errors {
+        padding-left: 0 !important;
+    }
+
+    #loginPage input#loginSubmit {
+        margin: 0 !important;
+    }
+
+    #loginPage div#loginVergeten p {
+        padding-left: 0 !important;
+    }
+
+    #loginPage div#loginVergeten p a {
+        display: block;
+        width: 100%;
+    }
+
+    #loginPage div#loginVergeten p span {
+        display: none;
+    }
+}
+
+
+#loginPage div.form-group:nth-child(2) {
+    margin-top: 40px !important;
+}
+
+#loginPage div.help-block.with-errors {
+    text-align: center;
+}
+
+#loginPage div.form-group.loginButton {
+    margin-top: 120px;
+    text-align: center;
+}
+
+#loginPage input#loginSubmit {
+    margin-left: 50px;
+}
+
+#loginPage div#loginVergeten {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#loginPage div#loginVergeten p {
+    padding-left: 50px;
+    text-align: center;
+}
+
+#loginPage div#loginVergeten a {
+    color: var(--colorGrayLight);
+    padding: 5px;
+}
+
+#loginPage div#loginVergeten a:hover,
+#loginPage div#loginVergeten a:focus,
+#loginPage div#loginVergeten a:active {
+    padding: 5px;
+    color: var(--colorPrimary);
+    text-decoration: none !important;
+}
+
+/*user_nieuw.php--------------------------------------------------------------*/
+#userNieuw div.form-group {
+    margin-top: 20px !important;
+}
+
+#userNieuw div.form-group.registreerButton {
+    margin-top: 40px !important;
+    text-align: center;
+}
+
+/*user_wachtwoord.php---------------------------------------------------------*/
+#userWachtwoord div.form-group {
+    margin-top: 20px !important;
+}
+
+#userWachtwoord div.form-group.wachtwoordHerstelButton {
+    margin-top: 40px !important;
+    text-align: center;
+}
+
+/*profile.php-----------------------------------------------------------------*/
+#profile div.input-group {
+    width: 100% !important;
+}
+
+#profile div.form-group.updateButton {
+    text-align: center !important;
+    margin: 60px 0px 40px 40px !important;
+}
+
+#profile #deleteMyAccount a {
+    color: var(--colorDanger) !important;
+    text-shadow: 0.5px 0.5px black;
+    text-decoration: none !important;
+}
+
+@media screen and (max-width: 375px) {
+    #profile > form {
+        width: 100%;
+        margin: auto 0;
+    }
+
+    #profile .input-group.customInputGroup {
+        width: 100%;
+    }
+
+    #profile .input-group.customInputGroup > .input-group-addon {
+        display: none;
+    }
+
+    .help-block.with-errors {
+        padding-left: 0 !important;
+    }
+
+    #profile div.form-group.updateButton {
+        margin: 50px 0 !important;
+    }
+
+    #profile div.form-group.updateButton input {
+        font-size: 14px;
+    }
+
+    #profile p.customTextBlue, #profile p#deleteMyAccount {
+        margin: 0 !important;
+    }
+}
+
+/*profile_delete_bevestiging.php----------------------------------------------*/
+#confirmDeleteMyAccount a:nth-child(1) > button {
+    font-size: 16px !important;
+    color: var(--colorGrayLight) !important;
+    background-color: transparent !important;
+    border-radius: 0px !important;
+    border: none !important;
+    border-bottom: 1px solid var(--colorSuccess) !important;
+    margin: 5px;
+}
+
+#confirmDeleteMyAccount a:nth-child(1) > button:hover {
+    color: var(--colorSuccess) !important;
+}
+
+#confirmDeleteMyAccount a:nth-child(2) > button {
+    font-size: 16px !important;
+    color: var(--colorGrayLight) !important;
+    background-color: transparent !important;
+    border-radius: 0px !important;
+    border: none !important;
+    border-bottom: 1px solid var(--colorDanger) !important;
+    margin: 5px;
+}
+
+#confirmDeleteMyAccount a:nth-child(2) > button:hover {
+    color: var(--colorDanger) !important;
+}
+
+/*siteProgress.php------------------------------------------------------------*/
+#siteProgress li,
+#siteProgress p {
+    color: var(--colorGrayLight);
+    text-shadow: 0.5px 0.5px black;
+}
+
+#siteProgress li > span {
+    color: var(--colorPrimary) !important;
+}
+
+#siteProgress {
+    margin-left: 25%;
+}
+
+@media screen and (max-width: 756px) {
+    #siteProgress {
+        margin: auto;
+    }
+}
+
+/*info.php--------------------------------------------------------------------*/
+.containerStatistieken div.progress {
+    background-color: transparent;
+    box-shadow: none !important;
+    /*border:1px solid var(--colorNav);*/
+}
+
+.containerStatistieken h4 {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/*progress bars*/
+.progress-label {
+    color: var(--colorGrayLight);
+    text-shadow: 0.5px 0.5px black;
+    float: left;
+    font-weight: normal;
+    width: 75px;
+    text-align: left;
+    margin-right: 2%;
+}
+
+.progress-bar {
+    color: white;
+    text-shadow: 0.5px 0.5px black;
+}
+
+.progress-bar.active {
+    -webkit-animation-direction: reverse;
+    -moz-animation-direction: reverse;
+    -ms-animation-direction: reverse;
+    -o-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+/*media screen----------------------------------------------------------------*/
+@media screen and (max-width: 560px) and (min-width: 0px) {
+    div.covers {
+        float: left;
+        margin: 2px;
+        width: 48%;
+        height: 48%;
+    }
+
+    div.covers img {
+        border: 1px solid black;
+        filter: brightness(100%);
+        transition: none;
+        width: 100%;
+        height: 100%;
+        /*  width: 175px;
+            height: 250px;*/
+    }
+
+    div.covers img:hover {
+        border-radius: 0px;
+    }
+
+    .panelPadding {
+        padding-top: 1px;
+    }
+}
+
+/*movies.php en episodes.php ----------------------------------------------------------------*/
+#resultaat.movies,
+#resultaat.episodes {
+    padding-left: 3%;
+}
+
+#resultaat.movies div.viewList,
+#resultaat.episodes div.viewList {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+@media screen and (max-width: 756px) {
+    #resultaat.movies,
+    #resultaat.episodes {
+        padding-left: 0;
+    }
+
+    #resultaat.movies div.viewList,
+    #resultaat.episodes div.viewList {
+        margin: auto;
+    }
+}
+
+#defaultSearch .panel-body .form-group input,
+#defaultSearch .panel-body .form-group select,
+#advancedSearch .panel-body .form-group input,
+#advancedSearch .panel-body .form-group select {
+    text-shadow: 1px 1px 1px black;
+}
+
+#advancedSearch div.panel-body {
+    padding-left: 1px;
+    padding-right: 1px;
+    margin-top: 15px;
+    display: block;
+}
+
+#advancedSearch .panel-body .one,
+#advancedSearch .panel-body .two {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width: 520px) {
+    #advancedSearch .panel-body .one,
+    #advancedSearch .panel-body .two {
+        display: block;
+    }
+
+    #advancedSearch .panel-body .form-group {
+        margin: auto !important;
+    }
+
+    .hide-on-mobile-custom {
+        display: none;
+    }
+}
+
+#advancedSearch .panel-body .form-group {
+    margin-bottom: 0 !important;
+    width: 150px;
+    text-align: left;
+}
+
+#advancedSearch input,
+#advancedSearch select {
+    text-align: left;
+}
+
+#advancedSearch button.customInputSubmit i {
+    font-size: 20px;
+    vertical-align: bottom;
+}
+
+#advancedSearch button.customInputSubmit:hover {
+    color: var(--colorPrimary) !important;
+    opacity: 1 !important;
+}
+
+/*zoekenIcoontjes (extra padding voor gemakkelijker te klikken) | advanced wanneer de zoekfunctie advanced is*/
+i#switchCover,
+i#switchList,
+i#switchCoverAdvanced,
+i#switchListAdvanced,
+i#zoeken,
+i#geavanceerdZoeken,
+i#zoekenAdvanced,
+i#geavanceerdZoekenAdvanced {
+    padding: 5px;
+    margin: 0;
+    margin-top: -2px;
+}
+
+/*episodes.php ---list-------------------------------------------------------------*/
+div#resultaat.episodes div.viewList th:nth-child(2),
+div#resultaat.episodes div.viewList td:nth-child(2) {
+    text-align: left !important;
+}
+
+/*RIBBONS*/
+.ribbonRIGHT {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    z-index: 1;
+    width: 75px;
+    text-align: right;
+    overflow: hidden;
+    height: 75px;
+}
+
+.ribbonRIGHT span {
+    text-align: center;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    width: 100px;
+    position: absolute;
+    top: 15px;
+    right: -25px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 20px;
+    display: block;
+    color: #222;
+    box-shadow: 0 3px 10px -3px rgba(0, 0, 0, 1);
+}
+
+.ribbonRIGHT.DVD span {
+    background: linear-gradient(rgba(217, 83, 79, 0.8) 0, rgba(217, 83, 79, 1) 100%);
+    border: 1px groove var(--colorDangerDarker);
+}
+
+.ribbonRIGHT.HD span {
+    background: linear-gradient(rgba(66, 139, 201, 0.8) 0, rgba(66, 139, 201, 1) 100%);
+    border: 1px groove var(--colorPrimaryDarker);
+}
+
+.ribbonRIGHT.HD3D span {
+    background: linear-gradient(rgba(237, 159, 53, 0.8) 0, rgba(237, 159, 53, 1) 100%);
+    border: 1px groove var(--colorWarningDarker);
+}
+
+.episode-advanced-search-result-cover-view:hover {
+    cursor: pointer;
+}
+
+.episode-advanced-search-result-cover-view .additional-layer-episodes-search {
+    position: absolute;
+    bottom: calc(50% - (100px / 2));
+    left: calc(50% - (100px / 2));
+    z-index: -1;
+}
+
+.episode-advanced-search-result-cover-view .additional-layer-episodes-search > i {
+    font-size: 100px;
+}
+
+
+/*************APP*************/
+/*************APP*************/
+/*************APP*************/
+/*************APP*************/
+/*************APP*************/
+
+/*padded section
+.pad-section {
+  padding: 50px 0;
+}
+
+.pad-section img {
+  width: 100%;
+}
+
+ vertical-centered text 
+.text-vcenter {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.text-vcenter h1 {
+  font-size: 44px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+HOME
+#home {
+  background: url('../images/app/bg3.jpg') no-repeat center center fixed; 
+  display: table;
+  height: 20%;
+  position: relative;
+  width: 100%;
+  padding-top: 180px;
+  padding-bottom: 180px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+OVER 
+#over img{
+    height: 30%;
+    width: 30%;
+    padding-top: 15px;
+}
+
+#over i{
+    font-size:50px;
+}
+
+#over p{
+    font-size:12px;
+    text-align: center;
+}
+
+#over h5{
+    text-align: center;
+}
+
+#over div.text-center {
+    padding: 20px;
+}
+
+
+ONTWIKKELING
+#ontwikkeling {
+  background-color: #428bca;
+  color: #ffffff;
+  padding-top: 10px !important;
+    text-shadow: 0.5px  0.5px black;
+}
+
+
+svg.banner { 
+    width: 100px; height: auto; 
+}
+
+svg {
+    filter: drop-shadow( -1px -1px 1px #000 );
+}
+
+.ontwikkelIcoon h4{
+    color: white;
+    text-align: center !important;
+    font-size: 14px !important;
+    text-shadow:  0.5px  0.5px black;
+}
+
+.ontwikkelIcoon div{
+    margin-top: 10px !important;
+    margin-bottom: 15px !important;
+}
+
+img.materialize{
+    height: auto;
+    width: 100%;
+    text-align: center;
+    padding-top: 6%;
+    padding-bottom: 7%;
+}
+
+img.apache{
+    height: auto;
+    width: 100%; 
+    padding-top: 38%;
+    padding-bottom: 38%;
+}
+
+#informatie {
+  background: url('../images/app/bg1.jpg') no-repeat center center fixed; 
+  display: table;
+  height: 800px;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#informatie .panel {
+  opacity: 0.80;
+}
+
+#informatie .panel-title{
+    font-size: 24px;
+}
+
+#informatie .panel-body{
+    text-align: justify;
+    font-size: 18px;
+    
+}
+
+SCREENSHOTS CAROUSEL
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    padding-top: 10px;  
+    padding-bottom: 10px; 
+    height: 100%;
+    margin: 0 auto;
+}
+
+.carousel-indicators li {
+    background: #000;
+}
+
+.carousel-indicators .active {
+    background: #428bca;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
+.glyphicon-chevron-left, .glyphicon-chevron-right{
+    color:#428bca;
+}
+
+DOWNLOAD
+#apk {
+  background-color: #428bca;
+  color: #ffffff;
+  padding-top: 10px !important;
+  text-shadow: 1px  1px 1px #444;
+}
+
+.imageAPK img{
+    height: 80px !important; 
+    width: 80px !important;
+}
+
+.dowloadAPK i{
+    color:white;
+    font-size: 675%;
+    padding-top: 17% !important;
+    font-size: 475%;
+    vertical-align:central !important;
+}
+
+CONTACT
+#contact {
+  background-color: #428bca;
+  color: #000;
+}*/
+
+/* Using rems to easily scale these gauges */
+
+
+/* Message */
+div.message {
+    z-index: 5;
+    background-color: var(--colorPrimary);
+    color: var(--colorDefault);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 25px;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.flash-message-is-present{
+    margin-top: 50px;
+}
+/* Message */
+
+/* ADMIN Config tab */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* ADMIN Config tab */
+
+/* CUSTOM FONTAWESOME */
+.fa-admin {
+	background: rgba(0,0,0,0.4);
+	border-radius: 50%;
+	width: 18px;
+	height: 18px;
+	text-align: center;
+}
+
+.fa-admin:before {
+	vertical-align: middle;
+}
+
+.fa-limegreen {
+	color: limegreen;
+}
+
+.fa-red {
+	color: red;
+}
+
+.fa-plus-square {
+	color: whitesmoke;
+	padding: 5px;
+	opacity: 0.75;
+}
+
+.fa-plus-square:hover {
+	opacity: 1;
+}
+
+/* ABONNEREN */
+.abonneren__container {
+	margin: auto;
+}
+
+@media (min-width: 768px) {
+	.abonneren__container{
+		max-width: 75%;
+	}
+}
+
+@media (min-width: 992px) {
+	.abonneren__container{
+		max-width: 50%;
+	}
+}
+
+.abonneren__container ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.abonneren__container li {
+	color: var(--colorGrayLight);
+	text-shadow: 0.5px 0.5px black;
+}
+
+.abonneren__container li > span.text-blue {
+	font-size:20px;
+}
+
+.abonneren__container span.fixed-width {
+	display: inline-block;
+	width:200px;
+}
+
+/* GENERAL STUFF */
+.text-blue {
+	color: var(--colorPrimary) !important;
+}
+
+.text-italic {
+	font-style: italic;
+}
+
+.text-sub {
+	padding: 0 2px;
+	vertical-align: baseline;
+}
+
+.text-small-75 {
+	font-size: 75%;
+}
+
