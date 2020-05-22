@@ -8,6 +8,13 @@ class Documentary_model extends CI_Model
 		parent::__construct();
 	}
 
+	public function get($zoekid)
+	{
+		$this->db->where('id', $zoekid);
+		$query = $this->db->get('documentary');
+		return $query->row();
+	}
+	
 	public function getDocumentariesOpNaam($zoekstring)
 	{
 		$this->db->select('*');
