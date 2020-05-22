@@ -83,6 +83,9 @@
 		</div>
 	</div>
 </div>
-<span style="position: absolute;right:0;bottom:0;color:red">
-	<a href="<?php echo site_url('/home/login') ?>">Admin</a>
+<span style="position: absolute;right:10px;bottom:5px;">
+	<a data-toggle="tooltip" title="Administrator" data-placement="left"
+	   href="<?php echo site_url('/home/login') ?>" style="color:black;font-size: 2em">
+	<i class="fa fa-sign-in" aria-hidden="true"></i>
+	</a>
 </span>

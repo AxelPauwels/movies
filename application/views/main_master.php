@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" href="<?php echo base_url(); ?>/Raspi.png">
+    <link rel="icon" type="image/png" href="<?php echo base_url(); ?>/moviesIcon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
     <link rel="stylesheet"
           href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 
-    <title>MovieServer</title>
+    <title>Movies</title>
     <!-- Bootstrap Core CSS -->
     <?php echo stylesheet("bootstrap.css"); ?>
     <!-- Custom CSS -->
