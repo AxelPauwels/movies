@@ -11,6 +11,7 @@
     --colorGrayLight: #999;
     --colorGrayDarker: #333;
     --colorNav: #222;
+    --colorNavDarker: #111;
     --colorDowloadGreen: #4AAF46;
     --colorDowloadOrange: #ED9F35;
 
@@ -21,6 +22,7 @@
     --baseUrl: "";
     --siteUrl: url("https://movies.sepagon.be");
     --backgroundImageUrl: url("../images/background6optimized.jpg");
+    --backgroundImageUrlMobile: url("../images/background6optimizedVertical.png");
 }
 
 body {
@@ -32,10 +34,23 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+	background-color: var(--colorNavDarker);/*falback color*/
 }
 
+
 @media screen and (max-width: 767px) {
-    .hide-on-mobile {
+    body{
+		background: var(--backgroundImageUrlMobile);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-attachment: fixed;
+		background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-color: var(--colorNavDarker);/*falback color*/
+	}
+	.hide-on-mobile {
         display: none !important;
     }
 }
@@ -474,6 +489,12 @@ select.customDropdown:active {
 }
 
 /*moviesList.php - episodesList.php-------------------------------------------*/
+.viewCovers{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
 .viewList td:first-child {
     text-align: left;
     padding-left: 15px;
@@ -587,12 +608,54 @@ div.viewList .table > tbody > tr:nth-child(2n+0) > th {
 }
 
 /*Covers----------------------------------------------------------------------*/
+.viewCovers{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
 div.covers {
     position: relative;
     margin: 2px;
     float: left;
     display: inline-block;
     overflow: hidden;
+	width:calc(100% - 4px);
+		max-width: 175px;
+}
+
+/* media 0px => container is full width minus 30px padding*/
+
+/*175 + 4px = 179 | 179 * 2 = 358 | 358 + 30px = 388 */
+@media screen and (min-width: 388px) {
+	div.covers {
+		width: calc(50% - 4px);
+	}
+}
+
+/*175 + 4px = 179 | 179 * 3 = 537 | 537 + 30px = 567 */
+@media screen and (min-width: 567px) {
+	div.covers {
+		width: calc(33.33% - 4px);
+	}
+}
+
+/*175 + 4px = 179 | 179 * 4 = 716 | 716 + 30px = 746 */
+@media screen and (min-width: 746px) {
+	div.covers {
+		width: calc(25% - 4px);
+	}
+}
+
+/* media 768px => container is 750px minus 30px padding*/
+
+/* media 992px => container is 970px minus 30px padding*/
+
+/*175 + 4px = 179 | 179 * 5 = 895 | 895 + 30px = 925 */
+@media screen and (min-width: 992px) {
+	div.covers {
+		width: calc(20% - 4px);
+	}
 }
 
 div.covers > a img {
@@ -1014,10 +1077,10 @@ div.col-lg-12.hero-feature > div.thumbnail {
 /*media screen----------------------------------------------------------------*/
 @media screen and (max-width: 560px) and (min-width: 0px) {
     div.covers {
-        float: left;
-        margin: 2px;
-        width: 48%;
-        height: 48%;
+        /*float: left;*/
+        /*margin: 2px;*/
+        /*width: 48%;*/
+        /*height: 48%;*/
     }
 
     div.covers img {
@@ -1042,7 +1105,7 @@ div.col-lg-12.hero-feature > div.thumbnail {
 /*movies.php en episodes.php ----------------------------------------------------------------*/
 #resultaat.movies,
 #resultaat.episodes {
-    padding-left: 3%;
+    /*padding-left: 3%;*/
 }
 
 #resultaat.movies div.viewList,
@@ -1165,22 +1228,22 @@ div#resultaat.episodes div.viewList td:nth-child(2) {
     line-height: 20px;
     display: block;
     color: #222;
-    box-shadow: 0 3px 10px -3px rgba(0, 0, 0, 1);
+    box-shadow: 0 3px 10px 0px rgba(0, 0, 0, 1);
 }
 
 .ribbonRIGHT.DVD span {
-    background: linear-gradient(rgba(217, 83, 79, 0.8) 0, rgba(217, 83, 79, 1) 100%);
-    border: 1px groove var(--colorDangerDarker);
+    background: linear-gradient(rgba(217, 83, 79, 0.95) 0, rgba(217, 83, 79, 1) 100%);
+    /*border: 1px groove var(--colorDangerDarker);*/
 }
 
 .ribbonRIGHT.HD span {
-    background: linear-gradient(rgba(66, 139, 201, 0.8) 0, rgba(66, 139, 201, 1) 100%);
-    border: 1px groove var(--colorPrimaryDarker);
+    background: linear-gradient(rgba(66, 139, 201, 0.95) 0, rgba(66, 139, 201, 1) 100%);
+    /*border: 1px groove var(--colorPrimaryDarker);*/
 }
 
 .ribbonRIGHT.HD3D span {
-    background: linear-gradient(rgba(237, 159, 53, 0.8) 0, rgba(237, 159, 53, 1) 100%);
-    border: 1px groove var(--colorWarningDarker);
+    background: linear-gradient(rgba(237, 159, 53, 0.95) 0, rgba(237, 159, 53, 1) 100%);
+    /*border: 1px groove var(--colorWarningDarker);*/
 }
 
 .episode-advanced-search-result-cover-view:hover {
