@@ -1,11 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-//RENAME THIS FILE TO "config.php" !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//RENAME THIS FILE TO "config.php" !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//RENAME THIS FILE TO "config.php" !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -28,7 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost';
+// localhost (vagrant) (without htaccess rules)
+$config['base_url'] = 'http://movies.local';
+
+// easyhost (with htaccess rewrite)
+//$config['base_url'] = '***';
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +39,11 @@ $config['base_url'] = 'http://localhost';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+// localhost (Vagrant) (without htaccess rules)
+//$config['index_page'] = 'index.php';
+
+// easyhost (with htaccess rewrite)
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
