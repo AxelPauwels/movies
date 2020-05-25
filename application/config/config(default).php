@@ -39,10 +39,8 @@ $config['base_url'] = 'http://movies.local';
 | variable so that it is blank.
 |
 */
-// localhost (Vagrant) (without htaccess rules)
-//$config['index_page'] = 'index.php';
-
-// easyhost (with htaccess rewrite)
+//$config['index_page'] = 'index.php'; //default
+// (disabled for htaccess rules)
 $config['index_page'] = '';
 
 /*

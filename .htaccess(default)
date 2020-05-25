@@ -1,11 +1,12 @@
 #############
 # Localhost #
 #############
-# (just disable all)
-### check index_page at config.php:
-### -------------------------------
-### make sure that the index is filled in
-### $config['index_page'] = "index.php"
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
 
 ###############
 # RaspberryPi #
