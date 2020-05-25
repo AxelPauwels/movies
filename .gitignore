@@ -1,8 +1,8 @@
 # APPLICATION
 #-------------------------
+.htaccess
 application/config/database.php
 application/config/config.php
-
 assets/images/comedy
 assets/images/episodes
 assets/images/documentary
