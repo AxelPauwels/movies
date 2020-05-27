@@ -1,17 +1,7 @@
 <div class="viewCovers">
 	<?php
 	foreach ($movies as $movie) :
-		$cover = image(
-			'films/COMINGSOON.png',
-			'title="' . $movie->naam . '" alt="' . $movie->naam . '" class="imgCover"'
-		);
-
-		if ($movie->download == 1) {
-			$cover = image(
-				'films/' . $movie->naam . " " . $movie->jaar . ".png",
-				'title="' . $movie->naam . '" alt="' . $movie->naam . '" class="imgCover"'
-			);
-		}
+		$cover = imageUrl($movie->imageUrl, 'title="' . $movie->naam . '" alt="' . $movie->naam . '" class="imgCover"');
 
 		echo '<div class="covers">' . PHP_EOL;
 

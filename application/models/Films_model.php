@@ -10,7 +10,7 @@ class Films_model extends CI_Model
 
     public function getFilmsOpNaam($zoekstring)
     {
-        $this->db->select('id,naam,jaar,download,type,imdb');
+        $this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
         $this->db->like('LOWER(naam)', strtolower($zoekstring));
         $this->db->order_by('naam', 'asc');
         $query = $this->db->get('films');
@@ -19,7 +19,7 @@ class Films_model extends CI_Model
 
     public function getFilmsOpJaar($zoekstring)
     {
-        $this->db->select('id,naam,jaar,download,type,imdb');
+        $this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
         $this->db->like('jaar', $zoekstring, 'after');
         $this->db->order_by('naam', 'asc');
         $query = $this->db->get('films');
@@ -28,7 +28,7 @@ class Films_model extends CI_Model
 
     public function getAllMovies()
     {
-        $this->db->select('id,naam,jaar,download,type,imdb');
+        $this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
         $this->db->order_by('naam', 'asc');
         $query = $this->db->get('films');
         return $query->result();
@@ -36,7 +36,7 @@ class Films_model extends CI_Model
 
     public function getMoviesMeestGedownload()
     {
-        $this->db->select('id,naam,jaar,download,type,imdb');
+        $this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
         $this->db->where('aantalDownloads >=', 3);
         $this->db->order_by('aantalDownloads', 'desc');
         $query = $this->db->get('films');
@@ -46,7 +46,7 @@ class Films_model extends CI_Model
     public function getGesorteerdeMovies($taal, $type, $duurVan, $duurTot, $grootteVan, $grootteTot, $jaarVan, $jaarTot)
     {
 
-        $this->db->select('id,naam,jaar,download,type,imdb');
+        $this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
 
         if ($taal != "0") {
             $this->db->where('taal', $taal);
@@ -87,7 +87,7 @@ class Films_model extends CI_Model
 
     public function getFilmsOpLaatstToegevoegd($aantal)
     {
-        $this->db->select('id,naam,jaar,download,type,imdb');
+        $this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
         $this->db->order_by('toegevoegd', 'desc');
         $this->db->limit($aantal);
         $query = $this->db->get('films');

@@ -13,6 +13,7 @@ class DocumentarySeizoen_model extends CI_Model
 		$this->db->select('*');
 		$this->db->like('LOWER(naam)', strtolower($zoekstring));
 		$orderby = "LEFT(naam,LENGTH(naam)-3),jaar";
+		$this->db->where('id >', 0);
 		$this->db->order_by($orderby);
 		$query = $this->db->get('documentarySeizoen');
 
@@ -21,9 +22,10 @@ class DocumentarySeizoen_model extends CI_Model
 
 	public function getDocumentarySeizoenenOpJaar($zoekstring)
 	{
-		$this->db->select('id,naam,jaar,download,type,imdb');
+		$this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
 		$this->db->like('jaar', $zoekstring, 'after');
 		$orderby = "LEFT(naam,LENGTH(naam)-3),jaar";
+		$this->db->where('id >', 0);
 		$this->db->order_by($orderby);
 		$query = $this->db->get('documentarySeizoen');
 
@@ -34,6 +36,7 @@ class DocumentarySeizoen_model extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->order_by('toegevoegd', 'desc');
+		$this->db->where('id >', 0);
 		$this->db->limit($aantal);
 		$query = $this->db->get('documentarySeizoen');
 
@@ -44,6 +47,7 @@ class DocumentarySeizoen_model extends CI_Model
 	{
 		$this->db->select('*');
 		$orderby = "LEFT(naam,LENGTH(naam)-3),jaar";
+		$this->db->where('id >', 0);
 		$this->db->order_by($orderby);
 		$query = $this->db->get('documentarySeizoen');
 		$documentarySeizoenen = $query->result();

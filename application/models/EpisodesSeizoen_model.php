@@ -10,7 +10,7 @@ class EpisodesSeizoen_model extends CI_Model
 
     public function getEpisodesSeizoenOpNaam($zoekstring)
     {
-        $this->db->select('id,naam,jaar,download,type,imdb');
+        $this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
         $this->db->like('LOWER(naam)', strtolower($zoekstring));
         $orderby = "LEFT(naam,LENGTH(naam)-3),jaar";
         $this->db->order_by($orderby);
@@ -29,7 +29,7 @@ class EpisodesSeizoen_model extends CI_Model
 
     public function getEpisodesSeizoenOpJaar($zoekstring)
     {
-        $this->db->select('id,naam,jaar,download,type,imdb');
+        $this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
         $this->db->like('jaar', $zoekstring, 'after');
         $orderby = "LEFT(naam,LENGTH(naam)-3),jaar";
         $this->db->order_by($orderby);
@@ -48,7 +48,7 @@ class EpisodesSeizoen_model extends CI_Model
 
     public function getAlleEpisodesSeizoen()
     {
-        $this->db->select('id,naam,jaar,collectie,download,type,imdb');
+        $this->db->select('id,naam,jaar,collectie,download,type,imdb,imageUrl');
         $orderby = "LEFT(naam,LENGTH(naam)-3),jaar";
         $this->db->order_by($orderby);
         $query = $this->db->get('episodesSeizoen');
@@ -74,7 +74,7 @@ class EpisodesSeizoen_model extends CI_Model
 
     public function getEpisodesMeestGedownload()
     {
-        $this->db->select('id,naam,jaar,download,type,imdb');
+        $this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
         $this->db->where('aantalDownloads >=', 1);
         $this->db->order_by('aantalDownloads', 'desc');
         $query = $this->db->get('episodesSeizoen');
@@ -92,7 +92,7 @@ class EpisodesSeizoen_model extends CI_Model
 
     public function getAlleEpisodesByCollectie($collectie)
     {
-        $this->db->select('id,naam,collectie,download,type,imdb');
+        $this->db->select('id,naam,collectie,download,type,imdb,imageUrl');
         $this->db->where('collectie', $collectie);
         $this->db->order_by('naam', 'asc');
         $query = $this->db->get('episodesSeizoen');
@@ -110,7 +110,7 @@ class EpisodesSeizoen_model extends CI_Model
 
     public function getEpisodesSeizoenOpLaatstToegevoegd($aantal)
     {
-        $this->db->select('id,naam,jaar,download,type,imdb');
+        $this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
         $this->db->order_by('toegevoegd', 'desc');
         $this->db->limit($aantal);
         $query = $this->db->get('episodesSeizoen');
@@ -142,7 +142,7 @@ class EpisodesSeizoen_model extends CI_Model
 
     public function getGesorteerdeEpisodes($taal, $type, $collectie, $seizoen, $jaarVan, $jaarTot)
     {
-        $this->db->select('id,naam,jaar,collectie,download,type,imdb');
+        $this->db->select('id,naam,jaar,collectie,download,type,imdb,imageUrl');
         if ($taal != "0") {
             $this->db->where('taal', $taal);
         }
