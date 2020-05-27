@@ -9,6 +9,13 @@ function image($image, $attributes = '') {
             "\"" . _stringify_attributes($attributes) . " />";
 }
 
+function imageUrl($imagePath,$attributes = '') {
+
+	return "<img src=\"" .
+		$imagePath .
+		"\"" . _stringify_attributes($attributes) . " />";
+}
+
 function javascript($js) {
     $CI = & get_instance();
     $CI->load->helper('url');

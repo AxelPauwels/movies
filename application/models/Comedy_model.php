@@ -10,7 +10,7 @@ class Comedy_model extends CI_Model
 
     public function getComediesOpNaam($zoekstring)
     {
-        $this->db->select('id,naam,jaar,download,type,imdb');
+        $this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
         $this->db->like('LOWER(naam)', strtolower($zoekstring));
         $this->db->order_by('naam', 'asc');
         $query = $this->db->get('comedy');
@@ -19,7 +19,7 @@ class Comedy_model extends CI_Model
 
     public function getComediesOpJaar($zoekstring)
     {
-        $this->db->select('id,naam,jaar,download,type,imdb');
+        $this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
         $this->db->like('jaar', $zoekstring, 'after');
         $this->db->order_by('naam', 'asc');
         $query = $this->db->get('comedy');
@@ -28,7 +28,7 @@ class Comedy_model extends CI_Model
 
     public function getAllComedies()
     {
-        $this->db->select('id,naam,jaar,download,type,imdb');
+        $this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
         $this->db->order_by('naam', 'asc');
         $query = $this->db->get('comedy');
         return $query->result();
@@ -36,7 +36,7 @@ class Comedy_model extends CI_Model
 
     public function getComediesMeestGedownload()
     {
-        $this->db->select('id,naam,jaar,download,type,imdb');
+        $this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
         $this->db->where('aantalDownloads >=', 3);
         $this->db->order_by('aantalDownloads', 'desc');
         $query = $this->db->get('comedy');
@@ -54,7 +54,7 @@ class Comedy_model extends CI_Model
         $jaarTot
     ) {
 
-        $this->db->select('id,naam,jaar,download,type,imdb');
+        $this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
 
         if ($taal != "0") {
             $this->db->where('taal', $taal);
@@ -95,7 +95,7 @@ class Comedy_model extends CI_Model
 
     public function getComediesOpLaatstToegevoegd($aantal)
     {
-        $this->db->select('id,naam,jaar,download,type,imdb');
+        $this->db->select('id,naam,jaar,download,type,imdb,imageUrl');
         $this->db->order_by('toegevoegd', 'desc');
         $this->db->limit($aantal);
         $query = $this->db->get('comedy');

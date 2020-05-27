@@ -1,17 +1,7 @@
 <div class="viewCovers">
 	<?php
 	foreach ($episodesSeizoen as $seizoen) :
-		$cover = image(
-			'films/COMINGSOON.png',
-			'title="' . $seizoen->naam . '" alt="' . $seizoen->naam . '" class="imgCover"'
-		);
-
-		if ($seizoen->download == 1) {
-			$cover = image(
-				'episodes/' . $seizoen->naam . ".png",
-				'title="' . $seizoen->naam . '" alt="' . $seizoen->naam . '"'
-			);
-		}
+		$cover = imageUrl($seizoen->imageUrl,'title="' . $seizoen->naam . '" alt="' . $seizoen->naam . '" class="imgCover"');
 
 		echo '<div class="covers" style="position: relative">' . PHP_EOL;
 
